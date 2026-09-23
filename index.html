@@ -4,9 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previsão do tempo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <div class="sky">
+        <div class="cloud cloud--a"></div>
+        <div class="cloud cloud--b"></div>
+        <div class="cloud cloud--c"></div>
+    </div>
+
+    <main class="app">
+
+        <header class="topbar">
+            <button class="icon-btn" aria-label="Buscar cidade">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M20 20L16.5 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </button>
+
+            <div class="place">
+                <span class="place__pin">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+                </span>
+                <span class="place__name">Valinhos, SP</span>
+            </div>
+
+            <button class="icon-btn" aria-label="Mais opções">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg>
+            </button>
+        </header>
+
+        <section class="now">
+            <div class="now__glyph" aria-hidden="true">
+                <div class="sun"></div>
+            </div>
+
+            <p class="now__condition">Ensolarado</p>
+            <p class="now__temp">24<span>°</span></p>
+            <p class="now__range">Máxima 27° · Mínima 18°</p>
+            <p class="now__feels">Sensação térmica de 25°</p>
+        </section>
+
+        <section class="panel">
+            <div class="panel__head">
+                <h2>Próximas horas</h2>
+            </div>
+
+            <div class="hours">
+                <div class="hour hour--now">
+                    <span class="hour__label">Agora</span>
+                    <span class="hour__glyph hour__glyph--sun"></span>
+                    <span class="hour__temp">24°</span>
+                </div>
+                <div class="hour">
+                    <span class="hour__label">14h</span>
+                    <span class="hour__glyph hour__glyph--sun"></span>
+                    <span class="hour__temp">25°</span>
+                </div>
+                <div class="hour">
+                    <span class="hour__label">15h</span>
+                    <span class="hour__glyph hour__glyph--cloud-sun"><i class="peek"></i></span>
+                    <span class="hour__temp">25°</span>
+                </div>
+                <div class="hour">
+                    <span class="hour__label">16h</span>
+                    <span class="hour__glyph hour__glyph--cloud-sun"><i class="peek"></i></span>
+                    <span class="hour__temp">24°</span>
+                </div>
+                <div class="hour">
+                    <span class="hour__label">17h</span>
+                    <span class="hour__glyph hour__glyph--cloud"></span>
+                    <span class="hour__temp">22°</span>
+                </div>
+                <div class="hour">
+                    <span class="hour__label">18h</span>
+                    <span class="hour__glyph hour__glyph--cloud"></span>
+                    <span class="hour__temp">20°</span>
+                </div>
+                <div class="hour">
+                    <span class="hour__label">19h</span>
+                    <span class="hour__glyph hour__glyph--rain"><i></i><i></i><i></i></span>
+                    <span class="hour__temp">19°</span>
+                </div>
+                <div class="hour">
+                    <span class="hour__label">20h</span>
+                    <span class="hour__glyph hour__glyph--rain"><i></i><i></i><i></i></span>
+                    <span class="hour__temp">18°</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel__head">
+                <h2>Próximos dias</h2>
+            </div>
+
+            <ul class="days">
+                <li class="day">
+                    <span class="day__name">Hoje</span>
+                    <span class="day__glyph day__glyph--sun"></span>
+                    <span class="day__condition">Ensolarado</span>
+                    <span class="day__bar" style="--lo:18; --hi:27;"><span class="day__bar-fill"></span></span>
+                    <span class="day__min">18°</span>
+                    <span class="day__max">27°</span>
+                </li>
+                <li class="day">
+                    <span class="day__name">Qui</span>
+                    <span class="day__glyph day__glyph--cloud-sun"><i class="peek"></i></span>
+                    <span class="day__condition">Parcialmente nublado</span>
+                    <span class="day__bar" style="--lo:17; --hi:25;"><span class="day__bar-fill"></span></span>
+                    <span class="day__min">17°</span>
+                    <span class="day__max">25°</span>
+                </li>
+                <li class="day">
+                    <span class="day__name">Sex</span>
+                    <span class="day__glyph day__glyph--cloud"></span>
+                    <span class="day__condition">Nublado</span>
+                    <span class="day__bar" style="--lo:16; --hi:22;"><span class="day__bar-fill"></span></span>
+                    <span class="day__min">16°</span>
+                    <span class="day__max">22°</span>
+                </li>
+                <li class="day">
+                    <span class="day__name">Sáb</span>
+                    <span class="day__glyph day__glyph--rain"><i></i><i></i><i></i></span>
+                    <span class="day__condition">Chuva fraca</span>
+                    <span class="day__bar" style="--lo:15; --hi:19;"><span class="day__bar-fill"></span></span>
+                    <span class="day__min">15°</span>
+                    <span class="day__max">19°</span>
+                </li>
+                <li class="day">
+                    <span class="day__name">Dom</span>
+                    <span class="day__glyph day__glyph--storm"><i class="bolt"></i></span>
+                    <span class="day__condition">Trovoadas</span>
+                    <span class="day__bar" style="--lo:16; --hi:21;"><span class="day__bar-fill"></span></span>
+                    <span class="day__min">16°</span>
+                    <span class="day__max">21°</span>
+                </li>
+                <li class="day">
+                    <span class="day__name">Seg</span>
+                    <span class="day__glyph day__glyph--cloud-sun"><i class="peek"></i></span>
+                    <span class="day__condition">Parcialmente nublado</span>
+                    <span class="day__bar" style="--lo:17; --hi:24;"><span class="day__bar-fill"></span></span>
+                    <span class="day__min">17°</span>
+                    <span class="day__max">24°</span>
+                </li>
+                <li class="day">
+                    <span class="day__name">Ter</span>
+                    <span class="day__glyph day__glyph--sun"></span>
+                    <span class="day__condition">Ensolarado</span>
+                    <span class="day__bar" style="--lo:18; --hi:26;"><span class="day__bar-fill"></span></span>
+                    <span class="day__min">18°</span>
+                    <span class="day__max">26°</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="panel panel--stats">
+            <div class="stat">
+                <span class="stat__label">Umidade</span>
+                <span class="stat__value">58%</span>
+            </div>
+            <div class="stat">
+                <span class="stat__label">Vento</span>
+                <span class="stat__value">12 km/h</span>
+            </div>
+            <div class="stat">
+                <span class="stat__label">Índice UV</span>
+                <span class="stat__value">6 · alto</span>
+            </div>
+            <div class="stat">
+                <span class="stat__label">Nascer do sol</span>
+                <span class="stat__value">06h12</span>
+            </div>
+        </section>
+
+        <footer class="foot">
+            <p>Dados ilustrativos · integração com Open-Meteo em breve</p>
+        </footer>
+
+    </main>
+
 </body>
 </html>
