@@ -36,6 +36,30 @@
             </button>
         </header>
 
+        <form class="search" id="search-form" role="search">
+            <label class="search__label" for="city-input">Buscar cidade</label>
+            <div class="search__row">
+                <input
+                    type="text"
+                    id="city-input"
+                    name="city"
+                    class="search__input"
+                    placeholder="Digite o nome da cidade"
+                    autocomplete="off"
+                >
+                <button type="submit" id="search-button" class="search__button">Buscar</button>
+            </div>
+        </form>
+
+        <div id="loading-state" class="state state--loading" hidden>
+            <span class="state__spinner" aria-hidden="true"></span>
+            <p>Buscando informações...</p>
+        </div>
+
+        <div id="error-state" class="state state--error" hidden role="alert">
+            <p id="error-message">Cidade não encontrada. Verifique o nome digitado e tente novamente.</p>
+        </div>
+
         <section class="now">
             <div class="now__glyph" aria-hidden="true">
                 <div class="sun"></div>
@@ -46,6 +70,9 @@
             <p class="now__range">Máxima 27° · Mínima 18°</p>
             <p class="now__feels">Sensação térmica de 25°</p>
         </section>
+
+        <p class="meta-updated" id="last-updated">Última atualização: <span id="last-updated-time">--</span></p>
+
 
         <section class="panel">
             <div class="panel__head">
@@ -185,6 +212,8 @@
         </footer>
 
     </main>
+
+    <script src="script.js" defer></script>
 
 </body>
 </html>
