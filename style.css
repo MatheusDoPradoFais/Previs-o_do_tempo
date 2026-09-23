@@ -10,6 +10,8 @@
   --muted-dim:   #e9ebee;
   --surface:     rgba(243, 247, 251, 0.06);
   --surface-line:rgba(65, 80, 95, 0.14);
+  --surface-soft: rgba(10, 12, 18, 0.42);
+  --surface-soft-line: rgba(255, 255, 255, 0.08);
   --accent-sun:  #ffc35c;
   --accent-rain: #7fb0e0;
   --accent-storm:#ffd873;
@@ -35,6 +37,8 @@ body{
   background:
     radial-gradient(120% 60% at 50% 100%, var(--sky-horizon) 0%, transparent 55%),
     linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 62%, var(--sky-horizon) 130%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height:100vh;
   display:flex;
   justify-content:center;
@@ -132,7 +136,11 @@ body{
 /* Now / hero ------------------------------------------ */
 .now{
   text-align:center;
-  padding-top:4px;
+  padding: 30px 20px 32px;
+  background: var(--surface-soft);
+  border: 1px solid var(--surface-soft-line);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
 }
 
 .now__glyph{
@@ -153,7 +161,7 @@ body{
 
 .now__condition{
   margin:0;
-  color: var(--muted);
+  color: rgba(255,255,255,0.6);
   font-size:15px;
   font-weight:500;
 }
@@ -165,6 +173,7 @@ body{
   font-size:104px;
   line-height:1;
   letter-spacing:-0.03em;
+  color:#ffffff;
 }
 .now__temp span{
   font-size:0.42em;
@@ -172,26 +181,26 @@ body{
   vertical-align:top;
   position:relative;
   top:0.16em;
-  color: var(--muted);
+  color: rgba(255,255,255,0.6);
 }
 
 .now__range{
   margin:10px 0 0;
   font-size:15px;
-  color: var(--paper);
-  opacity:.85;
+  color: #ffffff;
+  opacity:.9;
 }
 
 .now__feels{
   margin:4px 0 0;
   font-size:13px;
-  color: var(--muted-dim);
+  color: rgba(255,255,255,0.5);
 }
 
 /* Panels ------------------------------------------------ */
 .panel{
-  background: var(--surface);
-  border: 1px solid var(--surface-line);
+  background: var(--surface-soft);
+  border: 1px solid var(--surface-soft-line);
   border-radius: var(--radius-lg);
   padding: 18px 18px 20px;
 }
@@ -424,8 +433,8 @@ body{
 }
 .foot p{
   margin:0;
-  font-size:12px;
-  color: var(--muted-dim);
+  font-size:1.0em;
+  color:black
 }
 
 /* ------------------------------------------------------
